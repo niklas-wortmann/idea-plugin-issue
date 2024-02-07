@@ -1,5 +1,6 @@
-package org.jetbrains.analog.lang
+package com.example.markoplugin.lang
 
+import com.example.markoplugin.MarkoIcon
 import com.intellij.openapi.fileTypes.LanguageFileType
 import javax.swing.Icon
 
@@ -7,14 +8,27 @@ import javax.swing.Icon
 
 
 
-class AnalogFileType  private constructor() : LanguageFileType(AnalogLanguage.INSTANCE) {
-    override fun getName(): String = "Analog"
-    override fun getDescription(): String = "Analog"
-    override fun getDefaultExtension(): String = "ng"
-    override fun getIcon(): Icon = AnalogIcon.FILE
+class MarkoFileType : LanguageFileType(MarkoLanguage.INSTANCE) {
 
     companion object {
         @JvmField
-        val INSTANCE = AnalogFileType()
+        val INSTANCE: MarkoFileType = MarkoFileType()
     }
+    override fun getName(): String {
+        return "Marko"
+    }
+
+    override fun getDescription(): String {
+        return "Marko"
+    }
+
+    override fun getDefaultExtension(): String {
+        return "marko"
+    }
+
+    override fun getIcon(): Icon {
+        return MarkoIcon.FILE
+    }
+
+
 }
